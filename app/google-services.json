@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "866822280469",
+    "project_id": "autentikasi-firebase-ee4e9",
+    "storage_bucket": "autentikasi-firebase-ee4e9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:866822280469:android:ba0e6ba26686c3304f051c",
+        "android_client_info": {
+          "package_name": "com.rival.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "866822280469-3i47t1gvktvohkh5kponbigh5opgh7v6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rival.firebase",
+            "certificate_hash": "8df9692b316d9e5aace45399b9f846f1ba837737"
+          }
+        },
+        {
+          "client_id": "866822280469-avii3m8aad49kqqq14cponl6sorop0ns.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXGrFd6eFBrTuiV9GWP672aDPU9BVcPQQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "866822280469-avii3m8aad49kqqq14cponl6sorop0ns.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
