@@ -50,6 +50,11 @@ class LoginActivity : AppCompatActivity() {
         binding.tvRegister.setOnClickListener {
             val i = Intent(this, register::class.java)
             startActivity(i)
+            finish()
+        }
+
+        binding.forgotPassword.setOnClickListener {
+            startActivity(Intent(this, ForgotPassword::class.java))
         }
     }
 

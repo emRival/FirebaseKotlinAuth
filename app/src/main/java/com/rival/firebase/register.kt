@@ -56,6 +56,7 @@ class register : AppCompatActivity() {
         binding.tvLogin.setOnClickListener {
             val i = Intent(this, LoginActivity::class.java)
             startActivity(i)
+            finish()
         }
     }
 
