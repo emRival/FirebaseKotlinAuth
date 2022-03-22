@@ -4,34 +4,52 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.viewpager.widget.ViewPager
+import com.rival.firebase.R
+import com.rival.firebase.adapter.AdapterSlider
 import com.rival.firebase.databinding.FragmentHomeBinding
+import java.util.ArrayList
 
 class HomeFragment : Fragment() {
 
-    private var _binding: FragmentHomeBinding? = null
+    private var binding: FragmentHomeBinding? = null
+lateinit var vpCarousel : ViewPager
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        // menghilangkan action bar
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+        (requireActivity() as AppCompatActivity).window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        return binding.root
+        val view: View = inflater.inflate(R.layout.fragment_home, container, false)
+
+
+        vpCarousel = view.findViewById(R.id.vp_carousel)
+
+        val arraySlider = ArrayList<Int>()
+        arraySlider.add(R.drawable.carousel2)
+        arraySlider.add(R.drawable.carousel3)
+        arraySlider.add(R.drawable.carousel4)
+
+        val adapterSlider = AdapterSlider(arraySlider, activity)
+        vpCarousel.adapter = adapterSlider
+
+        return view
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        binding = null
     }
 }
