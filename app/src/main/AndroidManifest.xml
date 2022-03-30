@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FireBase">
         <activity
+            android:name=".DetailBukuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DetailProdukActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity
