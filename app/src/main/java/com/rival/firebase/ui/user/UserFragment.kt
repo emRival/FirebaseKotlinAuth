@@ -89,17 +89,17 @@ class UserFragment : Fragment() {
             }
         }
 
-        binding.btnSave.setOnClickListener saveProfile@ {
+        binding.btnSave.setOnClickListener saveProfile@{
 
-                val image = when {
-                    ::imgUri.isInitialized -> imgUri
-                    user?.photoUrl == null -> Uri.parse("https://bit.ly/3wc3Lcn")
-                    else -> user.photoUrl
-                }
+            val image = when {
+                ::imgUri.isInitialized -> imgUri
+                user?.photoUrl == null -> Uri.parse("https://bit.ly/3wc3Lcn")
+                else -> user.photoUrl
+            }
 
             val name = binding.edtName.text.toString()
 
-            if (name.isEmpty()){
+            if (name.isEmpty()) {
                 binding.edtName.error = "Nama Belum Di isi"
                 binding.edtName.requestFocus()
                 return@saveProfile
@@ -110,13 +110,21 @@ class UserFragment : Fragment() {
                 .setDisplayName(name)
                 .setPhotoUri(image)
                 .build().also {
-                    user?.updateProfile(it)?.addOnCompleteListener {task ->
-                        if (task.isSuccessful){
-                          val toast =  Toast.makeText(activity, "Data Profile Berhasil Disimpan !", Toast.LENGTH_SHORT)
+                    user?.updateProfile(it)?.addOnCompleteListener { task ->
+                        if (task.isSuccessful) {
+                            val toast = Toast.makeText(
+                                activity,
+                                "Data Profile Berhasil Disimpan !",
+                                Toast.LENGTH_SHORT
+                            )
                             toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0)
                             toast.show()
                         } else {
-                            Toast.makeText(activity, "${task.exception?.message}", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(
+                                activity,
+                                "${task.exception?.message}",
+                                Toast.LENGTH_SHORT
+                            ).show()
                         }
 
                     }
